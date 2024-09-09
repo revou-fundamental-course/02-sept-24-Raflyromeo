@@ -25,6 +25,7 @@ h1, h2 {
 .navbar {
   background-color: #333;
   padding: 15px;
+  width: 101%;
 }
 
 .navbar .container {
@@ -73,6 +74,9 @@ h1, h2 {
   cursor: pointer;
   color: #333;
   padding: 15px;
+  top: 15px;
+  left: 15px; /* Position it on the left for consistency */
+  z-index: 2; /* Ensure the button is above other elements */
 }
 
 /* Introduction Section */
@@ -154,14 +158,19 @@ button:hover {
   }
 
   #openSideNav {
-      position: fixed;
-      right: 15px;
+      left: 15px; /* Keep the menu button on the left */
       top: 15px;
+      z-index: 2; /* Ensure it stays on top */
   }
 
   .sidenav {
-      width: 100%;
+      width: 0; /* Initially hidden */
       padding-top: 20px;
+      overflow-y: auto; /* Allow scrolling */
+  }
+
+  .sidenav.open {
+      width: 80%; /* Show 80% of the screen when open */
   }
 
   .result {
@@ -172,5 +181,10 @@ button:hover {
   input[type="number"], button {
       width: 100%;
       margin: 5px 0;
+  }
+
+  .navbar .container {
+      flex-direction: column; /* Stack navbar elements vertically */
+      align-items: flex-start; /* Align navbar elements to the left */
   }
 }
