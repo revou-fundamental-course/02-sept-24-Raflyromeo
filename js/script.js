@@ -92,8 +92,10 @@ function calculateAreaOrPerimeter(idPrefix) {
     }
 
     document.getElementById(`${idPrefix}-result`).textContent = `Hasil: ${result}`;
+    document.getElementById(`${idPrefix}-result`).style.display = "block"; // Ensure result shows up
 }
 
+// Event listeners for calculating the area or perimeter
 document.getElementById("triangle-calculate").addEventListener("click", () => calculateAreaOrPerimeter("triangle"));
 document.getElementById("parallelogram-calculate").addEventListener("click", () => calculateAreaOrPerimeter("parallelogram"));
 document.getElementById("circle-calculate").addEventListener("click", () => calculateAreaOrPerimeter("circle"));
