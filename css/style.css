@@ -24,8 +24,9 @@ h1, h2 {
 /* Navbar Styling */
 .navbar {
   background-color: #333;
-  padding: 15px;
-  width: 101%;
+  padding: 10px;
+  padding-right: 100px;
+  width: 100%;
 }
 
 .navbar .container {
