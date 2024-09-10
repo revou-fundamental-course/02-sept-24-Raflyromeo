@@ -5,18 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="keywords" content="matematika, bangun datar" />
-    <meta
-        name="description"
-        content="Disini kita akan menghitung bangun datar dengan sangat mudah. Kalian tinggal masukkan angka dalam kolom hitungan, kemudian klik hitung. Setelah itu kita akan dapat penjelasan dari cara menghitung bangun datar tersebut."
-    />
+    <meta name="description" content="Disini kita akan menghitung bangun datar dengan sangat mudah. Kalian tinggal masukkan angka dalam kolom hitungan, kemudian klik hitung. Setelah itu kita akan dapat penjelasan dari cara menghitung bangun datar tersebut." />
     <meta name="author" content="Rafly Romeo" />
     <title>Belajar Matematika | Bangun Datar</title>
     <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-        </div>
+        <div class="container"></div>
     </nav>
 
     <div id="sideNav" class="sidenav">
@@ -30,38 +26,35 @@
         <a href="#section-rhombus">Belah Ketupat</a>
         <a href="#section-kite">Layang-Layang</a>
     </div>
-    
-    <!-- Button to open the side navigation -->
-    <span id="openSideNav" onclick="openNav()">&#9776; Menu</span>    
+
+    <span id="openSideNav" onclick="openNav()">&#9776; Menu</span>
 
     <header class="container">
         <div class="row">
             <div class="col-lg-12 introduction">
                 <h1 class="mb-4">Welcome to SemaCalc</h1>
-                <p>
-                    Halo Sobat, Selamat Datang di SemaCalc ><
-                </p>
-
+                <p>Halo Sobat, Selamat Datang di SemaCalc ></p>
                 <p class="mt-3">
                     Website ini dirancang untuk memudahkan pengguna dalam menghitung luas dan keliling berbagai bangun datar seperti segitiga, jajar genjang, lingkaran, persegi, persegi panjang, trapesium, belah ketupat, dan layang-layang. Dengan tampilan yang sederhana dan mudah dipahami, Anda dapat melakukan perhitungan secara cepat dan akurat tanpa perlu rumus manual. Cocok digunakan baik untuk keperluan belajar maupun kebutuhan sehari-hari.
                 </p>
             </div>
         </div>
     </header>
-    
+
     <main>
         <div class="container">
             <!-- ----------------------------------------------- TRIANGLE SECTION ------------------------------------------------ -->
             <div id="section-triangle">
                 <h2>Segitiga</h2>
                 <img src="img/Segitiga.png" alt="Segitiga">
+                <p><b>Luas (L) = 1/2 * a * t</b>, <b>Keliling (K) = a + b + c</b></p>
                 <div>
                     <input type="radio" id="triangle-area" name="triangle-option" value="area" checked>
                     <label for="triangle-area">Hitung Luas</label>
                     <input type="radio" id="triangle-perimeter" name="triangle-option" value="perimeter">
                     <label for="triangle-perimeter">Hitung Keliling</label>
                 </div>
-            
+
                 <!-- Area Calculation Inputs -->
                 <div id="triangle-area-inputs">
                     <label for="triangle-base">Alas (a):</label>
@@ -69,7 +62,7 @@
                     <label for="triangle-height">Tinggi (t):</label>
                     <input type="number" id="triangle-height" placeholder="Masukkan tinggi">
                 </div>
-            
+
                 <!-- Perimeter Calculation Inputs -->
                 <div id="triangle-perimeter-inputs" style="display: none;">
                     <label for="triangle-side-a">Sisi a:</label>
@@ -79,16 +72,18 @@
                     <label for="triangle-side-c">Sisi c:</label>
                     <input type="number" id="triangle-side-c" placeholder="Masukkan sisi c">
                 </div>
-            
+
                 <button id="triangle-calculate" class="triangle">Hitung</button>
+                <button id="triangle-clear">Clear</button>
                 <div id="triangle-result" class="result">Hasil akan ditampilkan di sini</div>
-            </div>                
+            </div>
             <!-- --------------------------------------------- END TRIANGLE SECTION ---------------------------------------------- -->
 
             <!-- ----------------------------------------------- START PARALLELOGRAM ----------------------------------------------- -->
             <div id="section-parallelogram">
                 <h2>Jajar Genjang</h2>
                 <img src="img/Jajar_Genjang.png" alt="Jajar Genjang">
+                <p><b>Luas (L) = a * t</b>, <b>Keliling (K) = 2 * (a + b)</b></p>
                 <div>
                     <input type="radio" id="parallelogram-area" name="parallelogram-option" value="area" checked>
                     <label for="parallelogram-area">Hitung Luas</label>
@@ -108,14 +103,16 @@
                     <input type="number" id="parallelogram-side-b" placeholder="Masukkan sisi b">
                 </div>
                 <button id="parallelogram-calculate">Hitung</button>
+                <button id="parallelogram-clear">Clear</button>
                 <div id="parallelogram-result" class="result">Hasil akan ditampilkan di sini</div>
-            </div>                
+            </div>
             <!-- --------------------------------------------- END PARALLELOGRAM SECTION ---------------------------------------------- -->
 
             <!-- ----------------------------------------------- START CIRCLE ----------------------------------------------- -->
             <div id="section-circle">
                 <h2>Lingkaran</h2>
                 <img src="img/Lingkaran.png" alt="Lingkaran">
+                <p><b>Luas (L) = π * r<sup>2</sup></b>, <b>Keliling (K) = 2 * π * r</b></p>
                 <div>
                     <input type="radio" id="circle-area" name="circle-option" value="area" checked>
                     <label for="circle-area">Hitung Luas</label>
@@ -131,14 +128,16 @@
                     <input type="number" id="circle-radius" placeholder="Masukkan jari-jari">
                 </div>
                 <button id="circle-calculate">Hitung</button>
+                <button id="circle-clear">Clear</button>
                 <div id="circle-result" class="result">Hasil akan ditampilkan di sini</div>
-            </div>                
+            </div>
             <!-- --------------------------------------------- END CIRCLE SECTION ---------------------------------------------- -->
 
             <!-- ----------------------------------------------- START SQUARE ----------------------------------------------- -->
             <div id="section-square">
                 <h2>Persegi</h2>
                 <img src="img/Persegi.png" alt="Persegi">
+                <p><b>Luas (L) = s<sup>2</sup></b>, <b>Keliling (K) = 4 * s</b></p>
                 <div>
                     <input type="radio" id="square-area" name="square-option" value="area" checked>
                     <label for="square-area">Hitung Luas</label>
@@ -149,19 +148,17 @@
                     <label for="square-side">Sisi (s):</label>
                     <input type="number" id="square-side" placeholder="Masukkan sisi">
                 </div>
-                <div id="square-perimeter-inputs" style="display: none;">
-                    <label for="square-side">Sisi (s):</label>
-                    <input type="number" id="square-side" placeholder="Masukkan sisi">
-                </div>
                 <button id="square-calculate">Hitung</button>
+                <button id="square-clear">Clear</button>
                 <div id="square-result" class="result">Hasil akan ditampilkan di sini</div>
-            </div>                
+            </div>
             <!-- --------------------------------------------- END SQUARE SECTION ---------------------------------------------- -->
 
             <!-- ----------------------------------------------- START RECTANGLE ----------------------------------------------- -->
             <div id="section-rectangle">
                 <h2>Persegi Panjang</h2>
                 <img src="img/Persegi_Panjang.png" alt="Persegi Panjang">
+                <p><b>Luas (L) = p * l</b>, <b>Keliling (K) = 2 * (p + l)</b></p>
                 <div>
                     <input type="radio" id="rectangle-area" name="rectangle-option" value="area" checked>
                     <label for="rectangle-area">Hitung Luas</label>
@@ -169,26 +166,22 @@
                     <label for="rectangle-perimeter">Hitung Keliling</label>
                 </div>
                 <div id="rectangle-area-inputs">
-                    <label for="rectangle-length">Panjang (l):</label>
+                    <label for="rectangle-length">Panjang (p):</label>
                     <input type="number" id="rectangle-length" placeholder="Masukkan panjang">
-                    <label for="rectangle-width">Lebar (w):</label>
-                    <input type="number" id="rectangle-width" placeholder="Masukkan lebar">
-                </div>
-                <div id="rectangle-perimeter-inputs" style="display: none;">
-                    <label for="rectangle-length">Panjang (l):</label>
-                    <input type="number" id="rectangle-length" placeholder="Masukkan panjang">
-                    <label for="rectangle-width">Lebar (w):</label>
+                    <label for="rectangle-width">Lebar (l):</label>
                     <input type="number" id="rectangle-width" placeholder="Masukkan lebar">
                 </div>
                 <button id="rectangle-calculate">Hitung</button>
+                <button id="rectangle-clear">Clear</button>
                 <div id="rectangle-result" class="result">Hasil akan ditampilkan di sini</div>
-            </div>                
+            </div>
             <!-- --------------------------------------------- END RECTANGLE SECTION ---------------------------------------------- -->
 
             <!-- ----------------------------------------------- START TRAPEZOID ----------------------------------------------- -->
             <div id="section-trapezoid">
                 <h2>Trapesium</h2>
                 <img src="img/Trapesium.png" alt="Trapesium">
+                <p><b>Luas (L) = 1/2 * (a1 + a2) * t</b>, <b>Keliling (K) = a + b + c + d</b></p>
                 <div>
                     <input type="radio" id="trapezoid-area" name="trapezoid-option" value="area" checked>
                     <label for="trapezoid-area">Hitung Luas</label>
@@ -214,14 +207,16 @@
                     <input type="number" id="trapezoid-side-d" placeholder="Masukkan sisi d">
                 </div>
                 <button id="trapezoid-calculate">Hitung</button>
+                <button id="trapezoid-clear">Clear</button>
                 <div id="trapezoid-result" class="result">Hasil akan ditampilkan di sini</div>
-            </div>                
+            </div>
             <!-- --------------------------------------------- END TRAPEZOID SECTION ---------------------------------------------- -->
 
             <!-- ----------------------------------------------- START RHOMBUS ----------------------------------------------- -->
             <div id="section-rhombus">
                 <h2>Belah Ketupat</h2>
                 <img src="img/Belah_Ketupat.png" alt="Belah Ketupat">
+                <p><b>Luas (L) = 1/2 * d1 * d2</b>, <b>Keliling (K) = 4 * s</b></p>
                 <div>
                     <input type="radio" id="rhombus-area" name="rhombus-option" value="area" checked>
                     <label for="rhombus-area">Hitung Luas</label>
@@ -239,14 +234,16 @@
                     <input type="number" id="rhombus-side" placeholder="Masukkan sisi">
                 </div>
                 <button id="rhombus-calculate">Hitung</button>
+                <button id="rhombus-clear">Clear</button>
                 <div id="rhombus-result" class="result">Hasil akan ditampilkan di sini</div>
-            </div>                
+            </div>
             <!-- --------------------------------------------- END RHOMBUS SECTION ---------------------------------------------- -->
 
             <!-- ----------------------------------------------- START KITE ----------------------------------------------- -->
             <div id="section-kite">
                 <h2>Layang-Layang</h2>
                 <img src="img/Layang-Layang.png" alt="Layang-Layang">
+                <p><b>Luas (L) = 1/2 * d1 * d2</b>, <b>Keliling (K) = 2 * (a + b)</b></p>
                 <div>
                     <input type="radio" id="kite-area" name="kite-option" value="area" checked>
                     <label for="kite-area">Hitung Luas</label>
@@ -266,12 +263,13 @@
                     <input type="number" id="kite-side-b" placeholder="Masukkan sisi b">
                 </div>
                 <button id="kite-calculate">Hitung</button>
+                <button id="kite-clear">Clear</button>
                 <div id="kite-result" class="result">Hasil akan ditampilkan di sini</div>
-            </div>                
+            </div>
             <!-- --------------------------------------------- END KITE SECTION ---------------------------------------------- -->
         </div>
     </main>
-    <script src="js/script.js"></script>
 
+    <script src="js/script.js"></script>
 </body>
 </html>
