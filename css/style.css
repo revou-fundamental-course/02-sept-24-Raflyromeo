@@ -1,35 +1,37 @@
+/* Mengatur font, margin, padding, warna latar, dan warna teks secara umum */
 body {
   font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
   background-color: #f4f4f4;
-  color: #333; 
+  color: #333;
+  font-size: 16px; /* Ukuran font default */
 }
 
+/* Mengatur tampilan heading (h1, h2, h3) dengan teks berwarna gelap dan rata tengah */
 h1, h2, h3 {
   color: #333;
   text-align: center;
   margin-bottom: 20px;
+  font-size: 2rem;
 }
 
+/* Mengatur container utama agar memiliki lebar maksimum dan tampil ditengah */
 .container {
   width: 90%;
-  max-width: 800px; 
+  max-width: 1000px; 
   margin: 0 auto;
   padding: 20px;
   background-color: white;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Efek bayangan */
 }
 
+/* Styling untuk navbar, termasuk tata letak flex untuk penyusunan elemen */
 .navbar {
   background-color: #333;
   padding: 10px;
-  padding-right: 100px;
   width: 100%;
-}
-
-.navbar .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -41,6 +43,7 @@ h1, h2, h3 {
   font-weight: bold;
 }
 
+/* Styling untuk sidenav (navigasi samping) dengan efek transisi saat membuka/menutup */
 .sidenav {
   height: 100%;
   width: 0;
@@ -50,17 +53,17 @@ h1, h2, h3 {
   left: 0;
   background-color: #111;
   overflow-x: hidden;
-  transition: 0.5s;
+  transition: 0.5s; /* Efek transisi */
   padding-top: 60px;
 }
 
 .sidenav a {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
-  font-size: 25px;
+  font-size: 1.5rem;
   color: #818181;
   display: block;
-  transition: 0.3s;
+  transition: 0.3s; /* Efek saat hover */
 }
 
 .sidenav a:hover {
@@ -83,37 +86,41 @@ h1, h2, h3 {
   padding: 15px;
   top: 15px;
   left: 15px; 
-  z-index: 2; 
+  z-index: 2;
 }
 
+/* Styling untuk bagian pengenalan */
 .introduction {
   text-align: center;
   margin-top: 30px;
 }
 
 .introduction p {
-  font-size: 18px;
+  font-size: 1.125rem;
   color: #555;
-  line-height: 1.6; 
+  line-height: 1.6; /* Mengatur spasi antar baris */
 }
 
+/* Styling untuk main content */
 main {
   margin-top: 20px;
 }
 
 main h2 {
   color: #333;
-  font-size: 24px;
+  font-size: 1.5rem;
   text-align: center;
   margin-bottom: 15px;
 }
 
+/* Gambar diatur agar responsif dan rata tengah */
 img {
   display: block;
   margin: 0 auto 20px auto;
-  max-width: 100%;
+  max-width: 100%; /* Gambar mengikuti lebar elemen induk */
 }
 
+/* Mengatur tampilan input untuk angka */
 input[type="number"] {
   display: block;
   width: 100%;
@@ -121,10 +128,11 @@ input[type="number"] {
   margin-bottom: 10px;
   border-radius: 4px;
   border: 1px solid #ccc;
-  font-size: 16px;
-  text-align: center; 
+  font-size: 1rem;
+  text-align: center;
 }
 
+/* Styling untuk tombol */
 button {
   display: block;
   width: 100%;
@@ -135,58 +143,100 @@ button {
   border-radius: 4px;
   cursor: pointer;
   margin-top: 10px;
-  font-size: 16px;
+  font-size: 1rem;
 }
 
+/* Warna tombol berubah saat di-hover */
 button:hover {
   background-color: #555;
 }
 
+/* Styling untuk hasil perhitungan */
 .result {
   background-color: #f9f9f9;
   padding: 15px;
   border-radius: 5px;
   margin-top: 10px;
-  font-size: 18px;
+  font-size: 1.125rem;
   text-align: center;
   border: 1px solid #ddd;
 }
 
-#triangle-result, #parallelogram-result, #circle-result, #square-result, #rectangle-result, 
-#trapezoid-result, #rhombus-result, #kite-result {
+/* Menyembunyikan elemen hasil tertentu sampai dibutuhkan */
+#triangle-result, #parallelogram-result, #circle-result, 
+#square-result, #rectangle-result, #trapezoid-result, 
+#rhombus-result, #kite-result {
   display: none;
 }
 
+/* Menggunakan Flexbox untuk layout responsif */
+.shape-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
 
+/* Mengatur setiap elemen bangun datar */
+.shape {
+  flex: 1 1 45%; /* Menyesuaikan ukuran elemen */
+  margin: 10px;
+  padding: 10px;
+}
+
+/* Mengatur elemen input dan tombol dalam form */
+.form-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.form-container input,
+.form-container button {
+  flex: 1 1 100%; /* Setiap input/tombol mengambil lebar penuh */
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+/* Media Query untuk perangkat dengan layar kecil (max-width: 768px) */
 @media screen and (max-width: 768px) {
+  body {
+    font-size: 14px; /* Ukuran font lebih kecil untuk layar kecil */
+  }
+
   .container {
     width: 100%;
-    margin: 0 auto; 
-    text-align: center; 
+    margin: 0 auto;
+    text-align: center;
   }
 
   #openSideNav {
-    left: 15px; 
+    left: 15px;
     top: 15px;
-    z-index: 2; 
+    z-index: 2;
   }
 
   .sidenav {
-    width: 0; 
+    width: 0;
     padding-top: 20px;
-    overflow-y: auto; 
+    overflow-y: auto; /* Menambahkan scroll pada konten panjang */
   }
 
   .sidenav.open {
-    width: 80%; 
+    width: 80%; /* Sidenav akan lebih lebar di perangkat kecil */
+  }
+
+  /* Mengubah setiap bangun datar menjadi 100% lebar di layar kecil */
+  .shape {
+    flex: 1 1 100%;
   }
 
   .result {
-    font-size: 16px;
+    font-size: 1rem;
     padding: 10px;
   }
 
-  input[type="number"], button {
+  input[type="number"],
+  button {
     width: 100%;
     margin: 5px 0;
   }
@@ -197,10 +247,38 @@ button:hover {
   }
 
   main {
-    text-align: center; 
+    text-align: center;
   }
 
   .introduction {
-    text-align: center; 
+    text-align: center;
+  }
+}
+
+/* Media Query untuk perangkat dengan layar besar (min-width: 1024px) */
+@media screen and (min-width: 1024px) {
+  body {
+    font-size: 18px;
+  }
+
+  h1, h2, h3 {
+    font-size: 2.5rem;
+  }
+
+  .container {
+    max-width: 1200px;
+  }
+
+  .sidenav a {
+    font-size: 1.8rem;
+  }
+
+  .result {
+    font-size: 1.25rem;
+  }
+
+  input[type="number"],
+  button {
+    font-size: 1.125rem;
   }
 }
