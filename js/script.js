@@ -1,22 +1,28 @@
+// Fungsi untuk membuka side navigation
 function openNav() {
     document.getElementById("sideNav").style.width = "250px";
 }
 
+// Fungsi untuk menutup side navigation
 function closeNav() {
     document.getElementById("sideNav").style.width = "0";
 }
 
+// Fungsi untuk setup toggle antara perhitungan luas dan keliling
 function setupToggle(idPrefix) {
     document.getElementById(`${idPrefix}-area`).addEventListener("change", function() {
+        // Tampilkan input area, sembunyikan input perimeter
         document.getElementById(`${idPrefix}-area-inputs`).style.display = "block";
         document.getElementById(`${idPrefix}-perimeter-inputs`).style.display = "none";
     });
     document.getElementById(`${idPrefix}-perimeter`).addEventListener("change", function() {
+        // Tampilkan input perimeter, sembunyikan input area
         document.getElementById(`${idPrefix}-area-inputs`).style.display = "none";
         document.getElementById(`${idPrefix}-perimeter-inputs`).style.display = "block";
     });
 }
 
+// Setup toggle untuk berbagai bangun datar
 setupToggle("triangle");
 setupToggle("parallelogram");
 setupToggle("circle");
@@ -26,13 +32,16 @@ setupToggle("trapezoid");
 setupToggle("rhombus");
 setupToggle("kite");
 
+// Fungsi untuk menghitung luas atau keliling
 function calculateAreaOrPerimeter(idPrefix) {
     const areaInputs = document.getElementById(`${idPrefix}-area-inputs`).querySelectorAll("input");
     const perimeterInputs = document.getElementById(`${idPrefix}-perimeter-inputs`).querySelectorAll("input");
     let result;
 
+    // Jika opsi hitung luas dipilih
     if (document.getElementById(`${idPrefix}-area`).checked) {
         const values = Array.from(areaInputs).map(input => parseFloat(input.value));
+        // Hitung luas berdasarkan tipe bangun datar
         if (idPrefix === "triangle") {
             const [base, height] = values;
             result = 0.5 * base * height;
@@ -59,7 +68,9 @@ function calculateAreaOrPerimeter(idPrefix) {
             result = 0.5 * d1 * d2;
         }
     } else {
+        // Jika opsi hitung keliling dipilih
         const values = Array.from(perimeterInputs).map(input => parseFloat(input.value));
+        // Hitung keliling berdasarkan tipe bangun datar
         if (idPrefix === "triangle") {
             const [a, b, c] = values;
             result = a + b + c;
@@ -87,13 +98,16 @@ function calculateAreaOrPerimeter(idPrefix) {
         }
     }
 
+    // Tampilkan hasil di elemen yang sesuai
     document.getElementById(`${idPrefix}-result`).textContent = `Hasil: ${result}`;
     document.getElementById(`${idPrefix}-result`).style.display = "block"; 
 
+    // Reset input setelah perhitungan
     areaInputs.forEach(input => input.value = "");
     perimeterInputs.forEach(input => input.value = "");
 }
 
+// Tambahkan event listener untuk menghitung luas/keliling pada tombol hitung
 document.getElementById("triangle-calculate").addEventListener("click", () => calculateAreaOrPerimeter("triangle"));
 document.getElementById("parallelogram-calculate").addEventListener("click", () => calculateAreaOrPerimeter("parallelogram"));
 document.getElementById("circle-calculate").addEventListener("click", () => calculateAreaOrPerimeter("circle"));
@@ -103,6 +117,7 @@ document.getElementById("trapezoid-calculate").addEventListener("click", () => c
 document.getElementById("rhombus-calculate").addEventListener("click", () => calculateAreaOrPerimeter("rhombus"));
 document.getElementById("kite-calculate").addEventListener("click", () => calculateAreaOrPerimeter("kite"));
 
+// Fungsi untuk mereset input pada setiap bangun datar
 document.getElementById("triangle-clear").addEventListener("click", function () {
     document.getElementById("triangle-base").value = '';
     document.getElementById("triangle-height").value = '';
